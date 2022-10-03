@@ -7,8 +7,8 @@ use App\Services\KvParseService;
 class EstateController extends Controller
 {
 
-    public function upgrade($deal_type){
+    public function upgrade($deal_type): array
+    {
         return  (new KvParseService())->run(constant("App\Enums\DealTypeEnum::{$deal_type}"));
-
     }
 }
